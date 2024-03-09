@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Database } from '~/src/pages/database'
+import { Main } from '~/src/pages/main'
 </script>
 
-<template><Database /></template>
+<template><Main /></template>

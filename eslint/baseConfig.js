@@ -1,4 +1,3 @@
-const prettierConfig = require('../.prettierrc')
 const configOverrides = require('./overrides/configOverrides')
 const vueOverrides = require('./overrides/vueOverrides')
 const typescriptRules = require('./rulesets/typescriptRules')
@@ -30,18 +29,6 @@ module.exports = {
     'func-style': ['error', 'expression'],
     'putout/putout': 'off',
     'ext/lines-between-object-properties': ['error', 'never'],
-    'prettier/prettier': ['error', prettierConfig],
-    'max-len': [
-      'error',
-      {
-        code: prettierConfig.printWidth,
-        comments: prettierConfig.printWidth + 40,
-        ignoreUrls: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true,
-        ignoreRegExpLiterals: true,
-      },
-    ],
     'nested-if/nested-if-statements': ['error', 2],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
