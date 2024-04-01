@@ -15,6 +15,7 @@ module.exports = {
     'hardcore/ts',
     'hardcore/vue',
     'plugin:jsdoc/recommended-typescript-error',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

@@ -1,3 +1,5 @@
 <template>
-  <main/>
+  <main>
+    <div>Содержимое страницы</div>
+  </main>
 </template>
