@@ -2,4 +2,4 @@
 import { Main } from '~/src/pages/main'
 </script>
 
-<template><Main /></template>
+<template><Main textColor="blue" /></template>

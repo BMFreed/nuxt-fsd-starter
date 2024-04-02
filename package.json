@@ -29,12 +29,12 @@
     "prettier": "^3.2.5",
     "typescript": "^5.1.6",
     "vue-eslint-parser": "^9.3.1",
-    "vue-tsc": "^2.0.6"
+    "vue-tsc": "^2.0.6",
+    "eslint-plugin-no-explicit-type-exports": "^0.12.1",
+    "eslint-plugin-sonar": "^0.13.2"
   },
   "dependencies": {
     "deepmerge": "^4.3.1",
-    "eslint-plugin-no-explicit-type-exports": "^0.12.1",
-    "eslint-plugin-sonar": "^0.13.2",
     "nuxt": "^3.6.5",
     "remeda": "^1.24.0"
   },

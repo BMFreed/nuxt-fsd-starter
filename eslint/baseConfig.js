@@ -25,8 +25,6 @@ module.exports = {
   },
   ignorePatterns: ['.*rc.js', 'eslint/**'],
   rules: {
-    quotes: ['error', 'single'],
-    'arrow-body-style': ['error', 'always'],
     'func-style': ['error', 'expression'],
     'putout/putout': 'off',
     'ext/lines-between-object-properties': ['error', 'never'],

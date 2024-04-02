@@ -1,5 +1,18 @@
+<script setup lang="ts">
+defineProps<{
+  /**
+   * Цвет текста
+   */
+  textColor: string
+}>()
+</script>
+
 <template>
-  <main>
-    <div>Содержимое страницы</div>
-  </main>
+  <main :class="$style.main">Текст имеет цвет {{ textColor }}</main>
 </template>
+
+<style module>
+.main {
+  color: v-bind(textColor);
+}
+</style>
