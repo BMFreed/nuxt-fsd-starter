@@ -32,5 +32,9 @@ module.exports = {
       format: null,
       modifiers: ['requiresQuotes'],
     },
+    {
+      selector: 'import',
+      format: ['PascalCase', 'strictCamelCase'],
+    },
   ],
 }
