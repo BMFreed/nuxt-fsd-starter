@@ -5,18 +5,43 @@ module.exports = {
     'plugin:boundaries/recommended',
   ],
   settings: {
-    'import/resolver': { typescript: {} },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
+    'boundaries/include': ['src/**/*'],
     'boundaries/elements': [
-      { type: 'app', pattern: 'app/*' },
-      { type: 'pages', pattern: 'pages/*' },
-      { type: 'processes', pattern: 'processes/*' },
-      { type: 'widgets', pattern: 'widgets/*' },
-      { type: 'features', pattern: 'features/*' },
-      { type: 'entities', pattern: 'entities/*' },
-      // Указываем, что именно в src, потому что папки shared у нас могут быть и в слайсах
-      { type: 'shared', pattern: 'src/*/shared/*' },
+      {
+        type: 'app',
+        pattern: 'app',
+      },
+      {
+        type: 'pages',
+        pattern: 'src/pages/*',
+        capture: ['page'],
+      },
+      {
+        type: 'widgets',
+        pattern: 'widgets/*',
+        capture: ['widget'],
+      },
+      {
+        type: 'features',
+        pattern: 'features/*/*',
+        capture: ['group', 'feature'],
+      },
+      {
+        type: 'entities',
+        pattern: 'entities/*',
+        capture: ['entity'],
+      },
+      {
+        type: 'shared',
+        pattern: 'shared/*',
+        capture: ['segment'],
+      },
     ],
-    'boundaries/ignore': ['**/*.test.*'],
   },
   rules: {
     'import/order': [
@@ -41,81 +66,58 @@ module.exports = {
         ],
       },
     ],
-    'no-restricted-imports': [
+    'boundaries/entry-point': [
       'error',
       {
-        patterns: [
-          // У всех паттернов кроме pages и app уровень +1, т.к. мы можем захотеть сгруппировать те или иные сущности.
-          // Рекомендуется, например, entities для конкретной страницы и shared enitites
+        default: 'disallow',
+        rules: [
           {
-            message:
-              'Private imports are prohibited, use public imports instead',
-            group: ['~/src/app/**'],
+            target: [
+              [
+                'shared',
+                {
+                  segment: 'lib',
+                },
+              ],
+            ],
+            allow: '*/index.ts',
           },
           {
-            message:
-              'Private imports are prohibited, use public imports instead',
-            group: ['~/src/pages/*/**'],
+            target: [
+              [
+                'shared',
+                {
+                  segment: 'lib',
+                },
+              ],
+            ],
+            allow: '*.(ts|tsx)',
           },
           {
-            message:
-              'Private imports are prohibited, use public imports instead',
-            group: ['~/src/processes/*/*/**'],
+            target: [
+              [
+                'shared',
+                {
+                  segment: 'constants',
+                },
+              ],
+            ],
+            allow: 'index.ts',
           },
           {
-            message:
-              'Private imports are prohibited, use public imports instead',
-            group: ['~/src/widgets/*/*/**'],
+            target: [
+              [
+                'shared',
+                {
+                  segment: 'ui', // ("ui"|"constants")
+                },
+              ],
+            ],
+            allow: '**',
           },
           {
-            message:
-              'Private imports are prohibited, use public imports instead',
-            group: ['~/src/features/*/*/**'],
-          },
-          {
-            message:
-              'Private imports are prohibited, use public imports instead',
-            group: ['~/src/entities/*/*/**'],
-          },
-          {
-            message:
-              'Private imports are prohibited, use public imports instead',
-            group: ['~/src/shared/*/*/**'],
-          },
-          {
-            message:
-              'Prefer absolute imports instead of relatives (for root modules)',
-            group: ['../**/app'],
-          },
-          {
-            message:
-              'Prefer absolute imports instead of relatives (for root modules)',
-            group: ['../**/processes'],
-          },
-          {
-            message:
-              'Prefer absolute imports instead of relatives (for root modules)',
-            group: ['../**/pages'],
-          },
-          {
-            message:
-              'Prefer absolute imports instead of relatives (for root modules)',
-            group: ['../**/widgets'],
-          },
-          {
-            message:
-              'Prefer absolute imports instead of relatives (for root modules)',
-            group: ['../**/features'],
-          },
-          {
-            message:
-              'Prefer absolute imports instead of relatives (for root modules)',
-            group: ['../**/entities'],
-          },
-          {
-            message:
-              'Prefer absolute imports instead of relatives (for root modules)',
-            group: ['../**/shared'],
+            target: ['app', 'pages', 'widgets', 'features', 'entities'],
+            allow: 'index.(ts|tsx)',
           },
         ],
       },
@@ -123,31 +125,85 @@ module.exports = {
     'boundaries/element-types': [
       'error',
       {
-        default: 'disallow',
+        default: 'allow',
+        message: '${file.type} is not allowed to import (${dependency.type})',
         rules: [
           {
-            from: 'app',
-            allow: [
-              'processes',
-              'pages',
-              'widgets',
-              'features',
-              'entities',
-              'shared',
+            from: ['shared'],
+            disallow: ['app', 'pages', 'widgets', 'features', 'entities'],
+            message:
+              'Shared module must not import upper layers (${dependency.type})',
+          },
+          {
+            from: ['entities'],
+            message: 'Entity must not import upper layers (${dependency.type})',
+            disallow: ['app', 'pages', 'widgets', 'features'],
+          },
+          {
+            from: ['entities'],
+            message: 'Entity must not import other entity',
+            disallow: [
+              [
+                'entities',
+                {
+                  entity: '!${entity}',
+                },
+              ],
             ],
           },
           {
-            from: 'processes',
-            allow: ['pages', 'widgets', 'features', 'entities', 'shared'],
+            from: ['features'],
+            message:
+              'Feature must not import upper layers (${dependency.type})',
+            disallow: ['app', 'pages', 'widgets'],
           },
           {
-            from: 'pages',
-            allow: ['widgets', 'features', 'entities', 'shared'],
+            from: ['features'],
+            message: 'Feature must not import other feature',
+            disallow: [
+              [
+                'features',
+                {
+                  feature: '!${feature}',
+                },
+              ],
+            ],
           },
-          { from: 'widgets', allow: ['features', 'entities', 'shared'] },
-          { from: 'features', allow: ['entities', 'shared'] },
-          { from: 'entities', allow: ['shared'] },
-          { from: 'shared', allow: ['shared'] },
+          {
+            from: ['widgets'],
+            message:
+              'Feature must not import upper layers (${dependency.type})',
+            disallow: ['app', 'pages'],
+          },
+          {
+            from: ['widgets'],
+            message: 'Widget must not import other widget',
+            disallow: [
+              [
+                'widgets',
+                {
+                  widget: '!${widget}',
+                },
+              ],
+            ],
+          },
+          {
+            from: ['pages'],
+            message: 'Page must not import upper layers (${dependency.type})',
+            disallow: ['app'],
+          },
+          {
+            from: ['pages'],
+            message: 'Page must not import other page',
+            disallow: [
+              [
+                'pages',
+                {
+                  page: '!${page}',
+                },
+              ],
+            ],
+          },
         ],
       },
     ],

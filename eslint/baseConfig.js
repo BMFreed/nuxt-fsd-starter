@@ -45,7 +45,7 @@ module.exports = {
         message: 'use ref instead of reactive for code consistency',
       },
     ],
-    'max-params': ['error', { max: 1 }],
+    'max-params': ['error', { max: 3 }],
     'unicorn/prevent-abbreviations': [
       'error',
       {
