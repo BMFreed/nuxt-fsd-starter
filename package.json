@@ -1,5 +1,5 @@
 {
-  "name": "polygon-frontend",
+  "name": "nuxt-fsd-starter",
   "private": false,
   "scripts": {
     "build": "nuxt build",
@@ -38,8 +38,8 @@
     "nuxt": "^3.6.5",
     "remeda": "^1.24.0"
   },
-  "version": "0.01",
-  "repository": "https://github.com/BMFreed/polygon-frontend.git",
+  "version": "0.5",
+  "repository": "https://github.com/BMFreed/nuxt-fsd-starter.git",
   "author": "Биницкий Богдан",
   "license": "MIT"
 }

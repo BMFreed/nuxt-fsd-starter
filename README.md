@@ -1,63 +1,32 @@
-# Nuxt 3 Minimal Starter
+# Универсальный стартер проекта на Nuxt 3
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Репозиторий-стартер для разработки приложения любой сложности на [Nuxt](https://nuxt.com/).
 
-## Setup
+## Архитектура и code-style
 
-Make sure to install the dependencies:
+Линтер настроен на строгое соблюдение методологии [Feature-Sliced Design](https://feature-sliced.design/).
+Также при конфигурации TSC и ESLint делался упор на максимальную строгость. За основу конфига для ESLint взят
+[eslint-config-hardcore](https://github.com/EvgenyOrekhov/eslint-config-hardcore), правила которого переопределялись для
+большего соответствия устоявшимся рабочим практикам.
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Запуск в режиме разработки
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+nuxt dev
 ```
 
-## Production
+Проект запускается по умолчанию на [http://localhost:3000](http://localhost:3000)
 
-Build the application for production:
+## Билд
+
+Для сборки гибридного SSR-приложения:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+nuxt build
 ```
 
-Locally preview production build:
+Для статической сборки:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+nuxt generate
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
