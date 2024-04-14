@@ -3,4 +3,5 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: { shim: true },
   srcDir: 'src/',
+  dir: { layouts: 'app/layouts' },
 })
