@@ -1,0 +1,29 @@
+services:
+  questionnaire_frontend:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM node:21
+
+        WORKDIR /opt/frontend
+
+        COPY package.json .
+        COPY tsconfig.json .
+        COPY pnpm-lock.yaml .
+        
+        RUN corepack enable pnpm && corepack prepare pnpm@latest --activate
+        RUN pnpm config set strict-ssl false --global
+        RUN pnpm install
+        COPY . .  
+        RUN pnpm run build
+
+        EXPOSE 3000
+        CMD ["pnpm", "run", "preview"]
+    restart: always
+    ports:
+      # owner:container
+      - "3000:3000"
+    environment:
+      APP_BACKEND_URL: http://localhost:8000
+    extra_hosts:
+      - "localhost:host-gateway"
