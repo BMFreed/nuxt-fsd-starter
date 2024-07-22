@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
+import Aura from '@primevue/themes/aura'
 import { ru } from 'primelocale/ru.json'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['nuxt-primevue'],
+  modules: ['@primevue/nuxt-module'],
   typescript: { shim: true },
   vite: {
     vue: {
@@ -14,10 +14,16 @@ export default defineNuxtConfig({
     },
   },
   primevue: {
-    // Автоматический импорт всех компонентов раздувает бандл
-    components: { include: [] },
     options: {
       locale: ru,
+      theme: {
+        preset: Aura,
+        options: {
+          cssLayer: {
+            name: 'primevue',
+          },
+        },
+      },
     },
   },
   dir: {

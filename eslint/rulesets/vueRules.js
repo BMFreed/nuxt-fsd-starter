@@ -45,5 +45,4 @@ module.exports = {
       named: 'longform',
     },
   ],
-  'vue/no-v-html': 'off',
 }

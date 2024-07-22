@@ -1,0 +1,8 @@
+@import url('primeicons/primeicons.css');
+@import url('normalize.css/normalize.css') layer(normalize);
+@layer normalize, primevue;
+
+body {
+    font-family: Arial system-ui;
+    line-height: initial;
+}
