@@ -51,10 +51,15 @@
     "nuxt": "^3.6.5",
     "primeicons": "^7.0.0",
     "primelocale": "github:primefaces/primelocale",
-    "primevue": "^4.0.1",
+    "primevue": "^4.0.2",
     "remeda": "^1.24.0"
   },
   "version": "0.1",
   "author": "Биницкий Богдан",
-  "license": "MIT"
+  "license": "MIT",
+  "pnpm": {
+    "patchedDependencies": {
+      "primevue@4.0.2": "patches/primevue@4.0.2.patch"
+    }
+  }
 }

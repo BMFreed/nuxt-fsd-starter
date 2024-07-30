@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         type: 'pages',
-        pattern: 'src/pages/*',
+        pattern: 'pages/*',
         capture: ['page'],
       },
       {
@@ -29,7 +29,7 @@ module.exports = {
       {
         type: 'features',
         pattern: 'features/*',
-        capture: ['group', 'feature'],
+        capture: ['feature'],
       },
       {
         type: 'entities',

@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  primevue@4.0.2:
+    hash: 5bllrrp6v5a6wonsexhou46tl4
+    path: patches/primevue@4.0.2.patch
+
 importers:
 
   .:
@@ -30,8 +35,8 @@ importers:
         specifier: github:primefaces/primelocale
         version: https://codeload.github.com/primefaces/primelocale/tar.gz/1a31e6848e8d598b15d486ac855f013dd6d2da08
       primevue:
-        specifier: ^4.0.1
-        version: 4.0.1(vue@3.4.21(typescript@5.4.3))
+        specifier: ^4.0.2
+        version: 4.0.2(patch_hash=5bllrrp6v5a6wonsexhou46tl4)(vue@3.4.21(typescript@5.4.3))
       remeda:
         specifier: ^1.24.0
         version: 1.57.0
@@ -983,8 +988,18 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
+  '@primevue/core@4.0.2':
+    resolution: {integrity: sha512-SpCIQ1LG6B66cecmZt1UdFeY7tbdJrgnhncADolfE9fcCyTSBtbaVLLhCV2E4Q9myMwCFE5KQxqazA4rdLWk4w==}
+    engines: {node: '>=12.11.0'}
+    peerDependencies:
+      vue: ^3.0.0
+
   '@primevue/icons@4.0.1':
     resolution: {integrity: sha512-tK3cYOSabRiSmAMuivw2QM/oG1ER5RGL9k7Vua7arQiwBghyPg04J/XllJ9SjORyNIY+dwbLuNyUwLKty4S0Hg==}
+    engines: {node: '>=12.11.0'}
+
+  '@primevue/icons@4.0.2':
+    resolution: {integrity: sha512-S1VEpMsx4uUAsTjZtII03LQqgocYwSKbXMF0YDFWybY8r5LaHaveVZxS/i+KbsCLaL18BXJw0L/7L1eQdJHzaA==}
     engines: {node: '>=12.11.0'}
 
   '@primevue/metadata@4.0.1':
@@ -5898,6 +5913,10 @@ packages:
     resolution: {integrity: sha512-mAIoOcx7pnqPOhohw+JYyuVO46R4hUMComFTNzjHabEIsUIyIgTXNtWqiSwbn7zE4hEhnPwNa9XX97XE4Cz+1g==}
     engines: {node: '>=12.11.0'}
 
+  primevue@4.0.2:
+    resolution: {integrity: sha512-bf5In//ixosZDOcfJ0iaBXhtQSpNC/CuAOE2KHd/SgUKZdij3VRljQ+I9+Be/TTxfikIeKH7eZ4gzDbWiIZurw==}
+    engines: {node: '>=12.11.0'}
+
   proc-log@3.0.0:
     resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -8323,7 +8342,7 @@ snapshots:
       '@typescript-eslint/parser': 6.21.0(eslint@8.57.0)(typescript@5.4.3)
       eslint: 8.57.0
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-vue: 9.24.0(eslint@8.57.0)
     transitivePeerDependencies:
       - eslint-import-resolver-node
@@ -8334,8 +8353,8 @@ snapshots:
   '@nuxtjs/eslint-config@12.0.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)':
     dependencies:
       eslint: 8.57.0
-      eslint-config-standard: 17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0))(eslint-plugin-n@15.7.0(eslint@8.57.0))(eslint-plugin-promise@6.1.1(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-config-standard: 17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0))(eslint-plugin-n@15.7.0(eslint@8.57.0))(eslint-plugin-promise@6.1.1(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-n: 15.7.0(eslint@8.57.0)
       eslint-plugin-node: 11.1.0(eslint@8.57.0)
       eslint-plugin-promise: 6.1.1(eslint@8.57.0)
@@ -8437,10 +8456,23 @@ snapshots:
       '@primeuix/utils': 0.0.5
       vue: 3.4.21(typescript@5.4.3)
 
+  '@primevue/core@4.0.2(vue@3.4.21(typescript@5.4.3))':
+    dependencies:
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      vue: 3.4.21(typescript@5.4.3)
+
   '@primevue/icons@4.0.1(vue@3.4.21(typescript@5.4.3))':
     dependencies:
       '@primeuix/utils': 0.0.5
       '@primevue/core': 4.0.1(vue@3.4.21(typescript@5.4.3))
+    transitivePeerDependencies:
+      - vue
+
+  '@primevue/icons@4.0.2(vue@3.4.21(typescript@5.4.3))':
+    dependencies:
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.2(vue@3.4.21(typescript@5.4.3))
     transitivePeerDependencies:
       - vue
 
@@ -9259,7 +9291,7 @@ snapshots:
       eslint-config-prettier: 8.10.0(eslint@8.57.0)
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-eslint-comments: 3.2.0(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint@8.57.0)(typescript@5.4.3))(eslint@8.57.0)(typescript@5.4.3)
       eslint-plugin-jest-formatting: 3.1.0(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
@@ -11257,10 +11289,10 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-config-standard@17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0))(eslint-plugin-n@15.7.0(eslint@8.57.0))(eslint-plugin-promise@6.1.1(eslint@8.57.0))(eslint@8.57.0):
+  eslint-config-standard@17.1.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0))(eslint-plugin-n@15.7.0(eslint@8.57.0))(eslint-plugin-promise@6.1.1(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-n: 15.7.0(eslint@8.57.0)
       eslint-plugin-promise: 6.1.1(eslint@8.57.0)
 
@@ -11292,7 +11324,7 @@ snapshots:
       enhanced-resolve: 5.16.0
       eslint: 8.57.0
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.3
       is-core-module: 2.13.1
@@ -11440,7 +11472,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -14426,6 +14458,15 @@ snapshots:
       '@primeuix/utils': 0.0.5
       '@primevue/core': 4.0.1(vue@3.4.21(typescript@5.4.3))
       '@primevue/icons': 4.0.1(vue@3.4.21(typescript@5.4.3))
+    transitivePeerDependencies:
+      - vue
+
+  primevue@4.0.2(patch_hash=5bllrrp6v5a6wonsexhou46tl4)(vue@3.4.21(typescript@5.4.3)):
+    dependencies:
+      '@primeuix/styled': 0.0.5
+      '@primeuix/utils': 0.0.5
+      '@primevue/core': 4.0.2(vue@3.4.21(typescript@5.4.3))
+      '@primevue/icons': 4.0.2(vue@3.4.21(typescript@5.4.3))
     transitivePeerDependencies:
       - vue
 
