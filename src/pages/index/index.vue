@@ -1,4 +1,9 @@
+<script setup lang="ts">
+const value = ref(new Date())
+</script>
+
 <template>
   <div>Главная страница</div>
-  <Button icon="pi pi-check" label="Check" />
+  <ElButton type="primary">Нажми меня</ElButton>
+  <ElDatePicker v-model="value" />
 </template>

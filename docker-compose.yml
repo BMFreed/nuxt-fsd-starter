@@ -1,5 +1,5 @@
 services:
-  questionnaire_frontend:
+  nuxt:
     build:
       context: .
       dockerfile_inline: |
@@ -11,9 +11,10 @@ services:
         COPY tsconfig.json .
         COPY pnpm-lock.yaml .
         
-        RUN corepack enable pnpm && corepack prepare pnpm@latest --activate
-        RUN pnpm config set strict-ssl false --global
-        RUN pnpm install
+        RUN corepack enable pnpm \
+        && corepack prepare pnpm@latest --activate \
+        && pnpm config set strict-ssl false --global \
+        && pnpm install
 
         EXPOSE 3000
         CMD ["pnpm", "run", "dev"]

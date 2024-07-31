@@ -1,5 +1,5 @@
 {
-  "name": "ibs-is-questionnaire",
+  "name": "frontend-nuxt-starter",
   "engines": {
     "node": "21"
   },
@@ -18,9 +18,9 @@
     "reformat-code": "eslint --fix \"./**/*.{js,ts,vue}\""
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.0.9",
     "@nuxt/devtools": "^1.0.8",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@primevue/nuxt-module": "^4.0.1",
     "@types/node": "^20.11.25",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.46.0",
@@ -44,22 +44,14 @@
     "vue-tsc": "^2.0.6"
   },
   "dependencies": {
-    "@primevue/themes": "^4.0.1",
     "@vueuse/core": "^10.10.0",
     "deepmerge": "^4.3.1",
+    "element-plus": "^2.7.8",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.6.5",
-    "primeicons": "^7.0.0",
-    "primelocale": "github:primefaces/primelocale",
-    "primevue": "^4.0.2",
     "remeda": "^1.24.0"
   },
   "version": "0.1",
   "author": "Биницкий Богдан",
-  "license": "MIT",
-  "pnpm": {
-    "patchedDependencies": {
-      "primevue@4.0.2": "patches/primevue@4.0.2.patch"
-    }
-  }
+  "license": "MIT"
 }
