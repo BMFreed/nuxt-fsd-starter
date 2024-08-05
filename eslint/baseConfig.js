@@ -72,10 +72,13 @@ module.exports = {
       'total-functions/no-unsafe-readonly-mutable-assignment': 'off',
       //TODO настроить это правило
       'perfectionist/sort-interfaces': 'off',
+      // Не работает с .vue-файлами
+      'sonar/no-hardcoded-credentials': 'off',
       'id-length': ['error', { exceptions: ['_'] }],
       'no-warning-comments': 'off',
       'no-await-in-loop': 'off',
       'no-underscore-dangle': 'off',
+      '@stylistic/quotes': ['error', 'single'],
       'unicorn/prevent-abbreviations': [
         'error',
         {
