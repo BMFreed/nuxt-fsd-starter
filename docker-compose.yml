@@ -23,15 +23,10 @@ services:
       # owner:container
       - "3000:3000"
     volumes:
-      - ${FRONTEND_PATH:-./public}:/opt/frontend/docs
-      - ${FRONTEND_PATH:-./public}:/opt/frontend/eslint
       - ${FRONTEND_PATH:-./public}:/opt/frontend/public
       - ${FRONTEND_PATH:-./src}:/opt/frontend/src
-      - ${FRONTEND_PATH:-./.eslintignore}:/opt/frontend/.eslintignore
-      - ${FRONTEND_PATH:-./.eslintrc.js}:/opt/frontend/.eslintrc.js
       - ${FRONTEND_PATH:-./.env}:/opt/frontend/.env
       - ${FRONTEND_PATH:-./.npmrc}:/opt/frontend/.npmrc
-      - ${FRONTEND_PATH:-./.prettierrc.json}:/opt/frontend/.prettierrc.json
       - ${FRONTEND_PATH:-./app.vue}:/opt/frontend/app.vue
       - ${FRONTEND_PATH:-./nuxt.config.ts}:/opt/frontend/nuxt.config.ts
     extra_hosts:
