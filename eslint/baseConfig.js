@@ -79,8 +79,9 @@ module.exports = {
       'no-warning-comments': 'off',
       'no-await-in-loop': 'off',
       'no-underscore-dangle': 'off',
-      '@stylistic/quotes': ['off'],
-      '@stylistic/max-len': ['off'],
+      '@stylistic/quotes': 'off',
+      '@stylistic/max-len': 'off',
+      '@stylistic/lines-around-comment': 'off',
       'unicorn/prevent-abbreviations': [
         'error',
         {
