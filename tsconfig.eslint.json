@@ -1,4 +1,0 @@
-{
-  "include": [".eslintrc.js", "eslint/**/*.js"],
-  "exclude": ["nuxt.config.ts"],
-}

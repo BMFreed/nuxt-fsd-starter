@@ -23,9 +23,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.eslint.json',
+    project: '../tsconfig.json',
+    tsconfigRootDir: __dirname,
   },
-  ignorePatterns: ['nuxt.config.ts'],
   rules: deepmerge.all([
     {
       'func-style': ['error', 'expression'],
