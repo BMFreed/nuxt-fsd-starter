@@ -1,9 +1,9 @@
+const deepmerge = require('deepmerge')
 const configOverrides = require('./overrides/configOverrides')
 const vueOverrides = require('./overrides/vueOverrides')
 const vueRules = require('./rulesets/vueRules')
 const typescriptRules = require('./rulesets/typescriptRules')
 const jsdocRules = require('./rulesets/jsdocRules')
-const deepmerge = require('deepmerge')
 
 module.exports = {
   env: {
@@ -23,9 +23,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
   },
-  ignorePatterns: ['.*rc.js', 'eslint/**'],
+  ignorePatterns: ['nuxt.config.ts'],
   rules: deepmerge.all([
     {
       'func-style': ['error', 'expression'],
@@ -48,6 +48,7 @@ module.exports = {
       'import/prefer-default-export': 'off',
       'import/extensions': [
         'error',
+
         // Указание формата vue необходимо для корректного резолва файлов:
         // https://github.com/vitejs/vite/issues/178
         'always',
@@ -55,9 +56,8 @@ module.exports = {
           ts: 'never',
         },
       ],
-      //Даёт false positive для bundledDependencies вне зависимости от настроек
+      // Даёт false positive для bundledDependencies вне зависимости от настроек
       'import/no-extraneous-dependencies': 'off',
-
       'no-restricted-syntax': [
         'error',
         {
@@ -68,9 +68,10 @@ module.exports = {
       'max-params': ['error', { max: 3 }],
       'etc/no-enum': 'off',
       'unicorn/no-null': 'off',
+      some: 'off',
       'promise/avoid-new': 'off',
       'total-functions/no-unsafe-readonly-mutable-assignment': 'off',
-      //TODO настроить это правило
+      // TODO настроить это правило
       'perfectionist/sort-interfaces': 'off',
       // Не работает с .vue-файлами
       'sonar/no-hardcoded-credentials': 'off',
@@ -78,7 +79,8 @@ module.exports = {
       'no-warning-comments': 'off',
       'no-await-in-loop': 'off',
       'no-underscore-dangle': 'off',
-      '@stylistic/quotes': ['error', 'single'],
+      '@stylistic/quotes': ['off'],
+      '@stylistic/max-len': ['off'],
       'unicorn/prevent-abbreviations': [
         'error',
         {
@@ -93,7 +95,7 @@ module.exports = {
             params: true,
             Params: true,
           },
-          ignore: ['\\.e2e$', '\\.e2e-spec$'],
+          ignore: [String.raw`\.e2e$`, String.raw`\.e2e-spec$`],
           checkShorthandProperties: true,
         },
       ],

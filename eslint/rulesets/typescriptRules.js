@@ -28,7 +28,7 @@ module.exports = {
     'error',
     { assertionStyle: 'as' },
   ],
-  //Много ложных срабатываний
+  // Много ложных срабатываний
   '@typescript-eslint/unbound-method': 'off',
   '@typescript-eslint/non-nullable-type-assertion-style': 'off',
   '@typescript-eslint/strict-boolean-expressions': 'off',

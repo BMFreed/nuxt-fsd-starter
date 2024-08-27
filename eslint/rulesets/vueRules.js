@@ -27,14 +27,14 @@ module.exports = {
   'vue/v-on-event-hyphenation': ['error', 'never'],
   'vue-scoped-css/enforce-style-type': ['error', { allows: ['module'] }],
   'vue/no-multiple-template-root': 'off',
-  //Не приносит пользы из-за слабой типизации defineSlots
+  // Не приносит пользы из-за слабой типизации defineSlots
   'vue/require-explicit-slots': 'off',
-  //Работает некорректно, если инпут - кастомный компонент
+  // Работает некорректно, если инпут - кастомный компонент
   'vuejs-accessibility/label-has-for': 'off',
-  //Устаревшее правило
+  // Устаревшее правило
   'vue/no-setup-props-reactivity-loss': 'off',
   'vue/v-on-handler-style': ['error', ['method', 'inline']],
-  //В теории полезное правило, но на практике - ложные срабатывания, плюс тяжело заглушить
+  // В теории полезное правило, но на практике - ложные срабатывания, плюс тяжело заглушить
   'sonar/no-vue-bypass-sanitization': 'off',
   'vue/html-self-closing': ['error'],
   'vue/v-slot-style': [

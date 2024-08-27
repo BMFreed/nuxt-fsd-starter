@@ -10,5 +10,4 @@
     "allowUnusedLabels": false,
     "noFallthroughCasesInSwitch": true
   },
-  "exclude": [".*rc.js", "eslint/**/*.js"]
 }

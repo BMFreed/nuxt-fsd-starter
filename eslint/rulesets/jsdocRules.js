@@ -12,7 +12,7 @@ module.exports = {
         'ClassDeclaration',
         'ArrowFunctionExpression',
         'ObjectExpression',
-        'PropertyDefinition'
+        'PropertyDefinition',
       ],
       publicOnly: true,
       checkConstructors: false,

@@ -14,7 +14,6 @@
     "preinstall": "npx only-allow pnpm",
     "postinstall": "nuxt prepare",
     "lint": "tsc && vue-tsc --noEmit && eslint \"{**/*,*}.{js,ts,vue}\"",
-    "lint-unused-modules": "eslint --config 'eslint/unusedModulesConfig.js' \"{**/*,*}.{js,ts,vue}\"",
     "reformat-code": "eslint --fix \"./**/*.{js,ts,vue}\""
   },
   "devDependencies": {
