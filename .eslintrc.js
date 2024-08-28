@@ -1,6 +1,10 @@
-const deepmerge = require('deepmerge')
-
-const featureSlicedConfig = require('./eslint/featureSlicedConfig')
-const baseConfig = require('./eslint/baseConfig')
-
-module.exports = deepmerge(featureSlicedConfig, baseConfig)
+module.exports = {
+  extends: [
+    './eslint/baseConfig',
+    './eslint/featureSlicedConfig',
+    './eslint/rulesets/vueConfig',
+    './eslint/rulesets/typescriptConfig',
+    './eslint/rulesets/jsdocConfig',
+    './eslint/overrides/configOverrides',
+  ],
+}
