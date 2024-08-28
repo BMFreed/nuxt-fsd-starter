@@ -48,12 +48,12 @@ module.exports = {
       'import/prefer-default-export': 'off',
       'import/extensions': [
         'error',
-
-        // Указание формата vue необходимо для корректного резолва файлов:
-        // https://github.com/vitejs/vite/issues/178
-        'always',
+        'ignorePackages',
         {
           ts: 'never',
+          // Указание формата vue необходимо для корректного резолва файлов:
+          // https://github.com/vitejs/vite/issues/178
+          vue: 'always',
         },
       ],
       // Даёт false positive для bundledDependencies вне зависимости от настроек
