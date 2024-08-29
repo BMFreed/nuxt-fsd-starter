@@ -6,5 +6,6 @@ module.exports = {
     './eslint/rulesets/typescriptConfig',
     './eslint/rulesets/jsdocConfig',
     './eslint/overrides/configOverrides',
+    './eslint/rulesets/mainRules',
   ],
 }
