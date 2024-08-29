@@ -77,7 +77,7 @@ module.exports = {
           },
           {
             target: ['app', 'pages', 'widgets', 'features', 'entities'],
-            allow: 'index.ts',
+            allow: 'index.{ts,vue}',
           },
         ],
       },
