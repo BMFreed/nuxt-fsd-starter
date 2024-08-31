@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["app.vue", "nuxt.config.ts", "src/pages/**/*.vue"],
+  "entry": ["src/pages/**/*.vue"],
   "ignore": [".eslintrc.js", ".nuxt/nuxt.d.ts"],
   "ignoreDependencies": ["vue", "@nuxtjs/eslint-config-typescript", "normalize.css"],
   "ignoreBinaries": ["only-allow"]
