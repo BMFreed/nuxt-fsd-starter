@@ -20,7 +20,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['.*rc.js', 'eslint/**/*.js', 'nuxt.config.ts'],
+      files: ['.*rc.js', '.eslintrc.light.js', 'nuxt.config.ts'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.configs.json',
