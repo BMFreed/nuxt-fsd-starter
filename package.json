@@ -1,7 +1,7 @@
 {
   "name": "frontend-nuxt-starter",
   "engines": {
-    "node": "21"
+    "node": "20.17.0"
   },
   "browserslist": [
     "defaults and fully supports es6-module"
@@ -41,5 +41,6 @@
     "normalize.css": "^8.0.1",
     "nuxt": "^3.13.1",
     "remeda": "^2.7.0"
-  }
+  },
+  "packageManager": "pnpm@9.9.0+sha1.3edbe440f4e570aa8f049adbd06b9483d55cc2d2"
 }

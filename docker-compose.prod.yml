@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile_inline: |
-        FROM node:21
+        FROM node:20-alpine
 
         WORKDIR /opt/frontend
 
