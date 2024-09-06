@@ -39,7 +39,7 @@
     "@vueuse/core": "^10.11.0",
     "element-plus": "^2.7.8",
     "normalize.css": "^8.0.1",
-    "nuxt": "^3.12.4",
+    "nuxt": "^3.13.1",
     "remeda": "^2.7.0"
   }
 }
