@@ -17,5 +17,5 @@
     "allowSyntheticDefaultImports": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": [".*rc.js", ".eslintrc.light.js", "nuxt.config.ts"]
+  "include": [".*rc.cjs", ".eslintrc.light.cjs", "nuxt.config.ts"]
 }

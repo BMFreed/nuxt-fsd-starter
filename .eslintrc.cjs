@@ -11,33 +11,26 @@ module.exports = {
     'hardcore/feature-sliced',
     'hardcore/jsdoc',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-  },
   overrides: [
     {
-      files: ['.*rc.js', '.eslintrc.light.js', 'nuxt.config.ts'],
+      files: ['.*rc.cjs', '.eslintrc.light.cjs', 'nuxt.config.ts'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.configs.json',
         tsconfigRootDir: __dirname,
       },
       rules: {
-        '@typescript-eslint/no-unsafe-call': 'off',
         '@stylistic/lines-around-comment': 'off',
         '@typescript-eslint/no-magic-numbers': 'off',
-        'no-magic-numbers': 'off',
-        'unicorn/prefer-module': 'off',
-        'import/no-commonjs': 'off',
-        'import/unambiguous': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
         'import/extensions': 'off',
+        'import/no-commonjs': 'off',
         'import/no-internal-modules': 'off',
+        'import/unambiguous': 'off',
         'jsdoc/require-jsdoc': 'off',
+        'no-magic-numbers': 'off',
         'no-template-curly-in-string': 'off',
+        'unicorn/prefer-module': 'off',
       },
     },
     {
@@ -49,4 +42,11 @@ module.exports = {
       },
     },
   ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    project: './tsconfig.json',
+    sourceType: 'module',
+    tsconfigRootDir: __dirname,
+  },
 }
