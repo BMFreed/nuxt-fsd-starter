@@ -1,3 +1,4 @@
+name: nuxt
 services:
   nuxt:
     build:
@@ -13,22 +14,25 @@ services:
         COPY tsconfig.json .
         
         RUN corepack enable pnpm \
-        && corepack prepare pnpm@latest --activate \
+        && corepack prepare pnpm@10.0 --activate \
         && pnpm config set strict-ssl false --global \
         && pnpm install
 
         EXPOSE 3000
-        CMD ["pnpm", "run", "dev"]
+        CMD ["/bin/sh", "-c", "pnpm generate-api;pnpm run dev"]
     restart: always
     ports:
       # owner:container
       - "3000:3000"
     volumes:
-      - ${FRONTEND_PATH:-./public}:/opt/frontend/public
+      - ${FRONTEND_PATH:-./api}:/opt/frontend/api
       - ${FRONTEND_PATH:-./src}:/opt/frontend/src
       - ${FRONTEND_PATH:-./.env}:/opt/frontend/.env
       - ${FRONTEND_PATH:-./.npmrc}:/opt/frontend/.npmrc
       - ${FRONTEND_PATH:-./app.vue}:/opt/frontend/app.vue
       - ${FRONTEND_PATH:-./nuxt.config.ts}:/opt/frontend/nuxt.config.ts
+      - ${FRONTEND_PATH:-./orval.config.ts}:/opt/frontend/orval.config.ts
     extra_hosts:
       - "localhost:host-gateway"
+    tmpfs:
+      - /tmp

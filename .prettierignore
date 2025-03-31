@@ -4,13 +4,10 @@
 .nitro
 .cache
 dist
-build
 
 # Node dependencies
 node_modules
 
-# Logs
-logs
 *.log
 
 # Misc
@@ -18,7 +15,6 @@ logs
 .fleet
 .idea
 .eslintcache
-/api
 
 # Local env files
 .env.local

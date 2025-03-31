@@ -1,3 +1,4 @@
+name: nuxt_prod
 services:
   nuxt:
     build:
@@ -7,28 +8,20 @@ services:
 
         WORKDIR /opt/frontend
 
-        COPY package.json .
-        COPY tsconfig.json .
-        COPY pnpm-lock.yaml .
-        COPY .env .
-        COPY .npmrc .
-        COPY nuxt.config.ts .
+        COPY . .
         
         RUN corepack enable pnpm \
-        && corepack prepare pnpm@latest --activate \
+        && corepack prepare pnpm@10.0 --activate \
         && pnpm config set strict-ssl false --global \
         && pnpm install
         
-        COPY src src
-        COPY public public
-        COPY app.vue .
-        RUN pnpm run build
-
         EXPOSE 3000
-        CMD ["pnpm", "run", "preview"]
+        CMD ["/bin/sh", "-c", "pnpm generate;npx serve .output/public -l 4000"]
     restart: always
     ports:
       # owner:container
-      - "3000:3000"
+      - "3000:4000"
     extra_hosts:
       - "localhost:host-gateway"
+    tmpfs:
+      - /tmp
