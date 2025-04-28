@@ -6,7 +6,7 @@ config({ path: ['.env.local', '.env'] })
 
 /** Конфигурация Orval */
 export default defineConfig({
-  pravda: {
+  project: {
     output: {
       mode: 'tags-split',
       target: 'api/endpoints',

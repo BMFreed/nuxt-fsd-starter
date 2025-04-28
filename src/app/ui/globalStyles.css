@@ -1,4 +1,4 @@
-@import url('normalize.css/normalize.css') layer(normalize);
+@import url('reset.css') layer(reset);
 
 :root {
     --el-color-primary: #67c23a;
